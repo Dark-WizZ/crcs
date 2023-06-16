@@ -9,6 +9,20 @@ $lgray:#F5F5F5;
 $dgray:#333333;
 $pieOrange: #ff7f0e;
 
+@media only screen and (max-width: 786px){
+  .App{
+    .header{
+      justify-self: start;
+      img{
+        display: none;
+      }
+      .title{
+        justify-content: start;
+      }
+    }
+  }
+}
+
 
 h1,h2,h3,h4,h5,h6{
   margin:0;
@@ -162,26 +176,66 @@ h1,h2,h3,h4,h5,h6{
       z-index: -1;
       padding: 30px;
       display: grid;
-      grid-template-columns: auto 1fr;
+      grid-template-columns: auto auto;
       grid-template-rows: auto auto;
-      .map_search{
+      border-radius: 30px;
+      padding:30px;
+      margin:30px 0;
+      .title{
         grid-column: span 2;
-        background-color: green;
+        text-align: center;
+        justify-self: center;
         height:40px;
+        display:flex;
+        align-items: center;
+        img{
+          height:30px;
+        }
+        input{
+          width: 100%;
+          height:30px;
+          border-radius: 30px;
+          padding:0 10px;
+        }
       }
       .filters{
-        background-color:$pieOrange;
-        width: 100px;
+        background-color: $lgray;
+        width: fit-content;
+        justify-self: self-end;
+        padding:10px;
+        img{
+          height:25px;
+        }
+        .wrapper{
+          padding:30px;
+          form{
+            display: grid;
+            gap:1rem;
+            div{
+              display: flex;
+              label{
+                width: 10em;
+              }
+              input{
+                width: 100%;
+              }
+            }
+            .dor_ip{
+              display: grid;
+              gap:1rem;
+            }
+          }
+        }
       }
       .map_container{
-        background-color: yellow;
         display: grid;
         place-content: center;
+        height: 500px;
+        width: 500px;
         .leaflet-container{
-          border-radius: 30px;
+          // border-radius: 30px;
           height: 500px;
-          width: 60vw;
-          box-shadow: 0 0 10px 2px $dgray;
+          width: 500px;
           .map_popup{
             display: grid;
             .name{
