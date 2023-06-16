@@ -1,4 +1,5 @@
 import './App.scss';
+import Barview from './comps/BarView';
 import Header from './comps/Header';
 import Hero from './comps/Hero';
 import MapView from './comps/MapView';
@@ -12,9 +13,10 @@ function App() {
       <Header />
       <Topbar />
       <Hero />
-      {/* <MapView /> */}
-      {/* <PiewView /> */}
+      <MapView />
+      <PiewView />
       <TrendView />
+      <Barview />
     </div>
   );
 }

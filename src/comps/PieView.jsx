@@ -22,6 +22,20 @@ const colorCodes = [
 ];
 const lightColorCode = colorCodes.map(c => c+'F1')
 
+
+const options = {
+  responsive: true,
+  plugins:{
+    legend:{
+      position: 'top',
+    },
+    title:{
+      display: true,
+      text: 'Type Wise Registraton'
+    }
+  }
+}
+
 const data = {
   labels: Object.keys(secData),
   datasets:[
@@ -37,7 +51,7 @@ const data = {
 function PiewView() {
   return ( <div className="pie_view">
     <div className="pie_container">
-      <Pie data={data}></Pie>
+      <Pie data={data} options={options}></Pie>
     </div>
   </div> );
 }

@@ -19,7 +19,7 @@ const options = {
     },
     title:{
       display: true,
-      text: 'Registraton Trends'
+      text: 'Year wise Registraton'
     }
   }
 }
@@ -30,10 +30,10 @@ const data = {
   labels,
   datasets: [
     {
-      label: 'Number of Registered Society',
+      label: 'Number of Registered Societies',
       data: Object.values(yearWiseRegData),
-      borderColor:'#ff7f0e',
-      backgroundColor: '#ff7f0e33'
+      borderColor:'#34A853',
+      backgroundColor: '#34A853cc'
     }
   ]
 }

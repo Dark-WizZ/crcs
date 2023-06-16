@@ -6,6 +6,7 @@ import report from '../icons/report.png'
 import more from '../icons/more.png'
 
 function Topbar() {
+
   return ( <div className="topbar">
     <div className="home">
       <img src={home} alt="home" />

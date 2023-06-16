@@ -1,0 +1,22 @@
+const stateWiseReg = {
+  'UTTAR PRADESH': 19,
+  KERALA: 9,
+  UTTARAKHAND: 1,
+  MAHARASHTRA: 28,
+  PUNJAB: 1,
+  'TAMIL NADU': 8,
+  TELANGANA: 6,
+  HARYANA: 4,
+  'ANDHRA PRADESH': 2,
+  MANIPUR: 3,
+  'NEW DELHI': 5,
+  'JAMMU AND KASHMIR': 1,
+  'MADHYA PRADESH': 3,
+  GUJARAT: 4,
+  ASSAM: 1,
+  BIHAR: 3,
+  KARNATAKA: 1,
+  'WEST BENGAL': 1
+}
+
+export default stateWiseReg;

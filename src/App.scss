@@ -3,7 +3,7 @@ $primary:#000046;
 $secondary:#ffffff;
 $indego:#6610F2;
 $deep-blue:#0052CC;
-$emerald-green: #34A853;
+$emerald-green: #0f9d58;
 $gold:#FFD700;
 $lgray:#F5F5F5;
 $dgray:#333333;
@@ -36,6 +36,7 @@ h1,h2,h3,h4,h5,h6{
     }
   }
   .topbar{
+    z-index: 10;
     position: sticky;
     top:0;
     background-color:$primary;
@@ -43,6 +44,9 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
     justify-content: space-around;
     border-bottom: 1px solid $dgray;
+    &.pinned{
+      background-color: $deep-blue;
+    }
     div{
       display: flex;
       align-items: center;
@@ -57,8 +61,10 @@ h1,h2,h3,h4,h5,h6{
     }
   }
   .hero{
-    background: linear-gradient(180deg, $primary 70%, $secondary 30%);
+    background: linear-gradient(180deg, $primary 10%, $deep-blue 80%, $secondary 10% );
     color:$secondary;
+    display:grid;
+    gap:10px;
     .top{
       padding:10px;
       display: flex;
@@ -87,27 +93,33 @@ h1,h2,h3,h4,h5,h6{
       }
       .map{
         .text{
-          color:$emerald-green;
+          color:$primary
         }
       }
       .pie{
         .text{
-          color:$indego
+          color:$pieOrange
+        }
+      }
+      .bar{
+        .text{
+          color:$deep-blue;
         }
       }
       .trend{
         .text{
-          color:$pieOrange;
+          color:$pieOrange
         }
       }
       .data_table{
         .text{
-          color:$indego
+          color:$deep-blue
         }
       }
     }
   }
   .map_view{
+    z-index: -1;
     padding: 30px;
     .map_container{
       display: grid;
@@ -143,6 +155,9 @@ h1,h2,h3,h4,h5,h6{
     .pie_container{
       height: 500px;
       width: 500px;
+      border-radius:30px ;
+      box-shadow: 0 0 10px 2px $dgray;
+      padding:30px;
     }
   }
   .trend_view{
@@ -150,8 +165,21 @@ h1,h2,h3,h4,h5,h6{
     display:grid;
     place-content: center;
     .trend_container{
-      height: min-content;
-      width: 600px;
+      display: grid;
+      place-content: center;
+      width: 80vw;
+      max-height: 70vh;
+    }
+  }
+  .bar_view{
+    padding: 30px;
+    display:grid;
+    place-content: center;
+    .bar_container{
+      display:grid;
+      place-content: center;
+      max-height: 70vh;
+      width: 80vw;
     }
   }
 }
