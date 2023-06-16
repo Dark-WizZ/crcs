@@ -135,4 +135,13 @@ h1,h2,h3,h4,h5,h6{
       }
     }
   }
+  .pie_view{
+    padding: 30px;
+    display:grid;
+    place-content: center;
+    .pie_container{
+      height: 500px;
+      width: 500px;
+    }
+  }
 }
