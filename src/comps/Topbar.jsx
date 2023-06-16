@@ -15,9 +15,13 @@ function Topbar() {
       <img src={dashboard} alt="dashboard" />
       <div className="text">Dashboard</div>
     </div>
-    <div className="application">
-      <img src={form} alt="forms" />
+    <div className="form">
+      <img src={form} alt="form" />
       <div className="text">Forms</div>
+    </div>
+    <div className="application">
+      <img src={application} alt="application" />
+      <div className="text">Application</div>
     </div>
     <div className="reports">
       <img src={report} alt="reports" />

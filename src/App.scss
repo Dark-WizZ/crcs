@@ -3,7 +3,7 @@ $primary:#000046;
 $secondary:#ffffff;
 $indego:#6610F2;
 $deep-blue:#0052CC;
-$emerald-blue: #34A853;
+$emerald-green: #34A853;
 $gold:#FFD700;
 $lgray:#F5F5F5;
 $dgray:#333333;
@@ -14,6 +14,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .App{
+  display: grid;
   .header{
     text-align: center;
     display:flex;
@@ -34,6 +35,8 @@ h1,h2,h3,h4,h5,h6{
     }
   }
   .topbar{
+    position: sticky;
+    top:0;
     background-color:$primary;
     color:$secondary;
     display: flex;
@@ -53,7 +56,7 @@ h1,h2,h3,h4,h5,h6{
     }
   }
   .hero{
-    background: linear-gradient(180deg, $primary 75%, $secondary 50%);
+    background: linear-gradient(180deg, $primary 70%, $secondary 30%);
     color:$secondary;
     .top{
       padding:10px;
@@ -83,7 +86,7 @@ h1,h2,h3,h4,h5,h6{
       }
       .map{
         .text{
-          color:$emerald-blue;
+          color:$emerald-green;
         }
       }
       .pie{
@@ -93,13 +96,26 @@ h1,h2,h3,h4,h5,h6{
       }
       .trend{
         .text{
-          color:$emerald-blue;
+          color:$emerald-green;
         }
       }
       .data_table{
         .text{
           color:$indego
         }
+      }
+    }
+  }
+  .map_view{
+    padding: 30px;
+    .map_container{
+      display: grid;
+      place-content: center;
+      .leaflet-container{
+        border-radius: 30px;
+        height: 500px;
+        width: 500px;
+        box-shadow: 0 0 10px 2px $dgray;
       }
     }
   }
