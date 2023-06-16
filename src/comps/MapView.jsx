@@ -2,12 +2,12 @@ import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import L from 'leaflet'
 import markerIcon from 'leaflet/dist/images/marker-icon.png'
-import dummyData from '../data/dummydataWCoords'
+import dummyData from '../data/dummyData'
+import MapPopup from './MapPopup'
 
 const defIcon = new L.icon({
   iconUrl: markerIcon
 })
-
 function MapView() {
   return ( 
     <div className="map_view">
@@ -26,12 +26,7 @@ function MapView() {
           {
             dummyData.map((obj,i)=>{
               return <Marker position={obj.latlng} icon={defIcon}>
-                <Popup>
-                  <div className="map_wrapper">
-                    <div>{obj.name}</div>
-                    <div>{obj.address}</div>
-                  </div>
-                </Popup>
+                <Popup> <MapPopup obj={obj} /> </Popup>
             </Marker>
             })
           }
