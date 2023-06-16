@@ -1,0 +1,8 @@
+primary: #000046
+secondary: #ffffff
+Deep Blue: #0052CC
+Emerald Green: #34A853
+Indigo: #6610F2
+Gold: #FFD700
+Light Gray: #F5F5F5
+Dark Gray: #333333
