@@ -4,8 +4,34 @@ import trend from '../icons/trend.png'
 import dataTable from '../icons/table.png'
 import dummyData from '../data/dummyData'
 import bar from '../icons/bar.png'
+import {useNavigate} from 'react-router-dom'
+import { useRef, useEffect } from 'react'
 
 function Hero() {
+  const barRef = useRef()
+  const pieRef = useRef()
+  const mapRef = useRef()
+  const trendRef = useRef()
+  const tableRef = useRef()
+  const nav = useNavigate()
+
+  const refs = [
+    barRef, pieRef, mapRef,trendRef,tableRef
+  ]
+
+
+
+  const cardClk = (e, path) =>{
+    console.log('click')
+    refs.forEach(e => {
+      if(e.current.classList.contains('selected')){
+        e.current.classList.remove('selected')
+      }
+    })
+    e.target.classList.add('selected')
+    nav(path)
+  }
+
   return ( <div className="hero">
     <div className="top">
       <div className="total">Total Reistered Societies: {dummyData.length}</div>
@@ -15,23 +41,23 @@ function Hero() {
       </div>
     </div>
     <section>
-      <div className="bar view_card">
+      <div className="bar view_card" onClick={e => cardClk(e,'/barview')} ref={barRef}>
         <img src={bar} alt="bar view" />
         <div className="text">REGISTRATION TRENDS</div>
       </div>
-      <div className="pie view_card">
+      <div className="pie view_card" onClick={e => cardClk(e,'/pieview')} ref={pieRef}>
         <img src={pie} alt="pie view" />
         <div className="text">SECTOR PROPORTION</div>
       </div>
-      <div className="map view_card">
+      <div className="map view_card selected" onClick={e => cardClk(e,'/mapview')} ref={mapRef}>
         <img src={map} alt="map view" />
         <div className="text">GEOGRAPHIC INSIGHT</div>
       </div>
-      <div className="trend view_card">
+      <div className="trend view_card" onClick={e => cardClk(e,'/trendview')} ref={trendRef}>
         <img src={trend} alt="trend view" />
         <div className="text">REGISTRATION TRENDS</div>
       </div>
-      <div className="data_table view_card">
+      <div className="data_table view_card" onClick={e => cardClk(e,'/')} ref={tableRef}>
         <img src={dataTable} alt="data table view" />
         <div className="text">INFORMATION TABLE</div></div>
     </section>

@@ -32,8 +32,8 @@ const data = {
     {
       label: 'Number of Registered Societies',
       data: Object.values(yearWiseRegData),
-      borderColor:'#34A853',
-      backgroundColor: '#34A853cc'
+      borderColor:'#ff7f0e',
+      backgroundColor: '#ff7f0ecc'
     }
   ]
 }

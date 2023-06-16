@@ -86,100 +86,154 @@ h1,h2,h3,h4,h5,h6{
         width: 150px;
         border-radius: 10px;
         display: grid;
-        box-shadow: 0 0 10px 2px $primary;
+        box-shadow: 0 0 5px 1px $primary;
         img{
           height:2rem;
+        }
+        >*{
+          pointer-events: none;
+        }
+        &:hover{
+          box-shadow: 0 0 10px 3px $primary;
+          cursor: pointer;
+        }
+        &.selected{
+          box-shadow: 0 0 5px 2px $primary;
+          background: linear-gradient(180deg, $primary , $deep-blue 80%);
+          .text{
+            color:$secondary
+          }
         }
       }
       .map{
         .text{
-          color:$primary
+          color:$primary;
+        }
+        &.selected{
+          img{
+            content: url('../src/icons/map_s.png');
+          }
         }
       }
       .pie{
         .text{
           color:$pieOrange
         }
+        &.selected{
+          img{
+            content: url('../src/icons/pie_s.png');
+          }
+        }
       }
       .bar{
         .text{
           color:$deep-blue;
+        }
+        &.selected{
+          img{
+            content: url('../src/icons/bar_s.png');
+          }
         }
       }
       .trend{
         .text{
           color:$pieOrange
         }
+        &.selected{
+          img{
+            content: url('../src/icons/trend_s.png');
+          }
+        }
       }
       .data_table{
         .text{
           color:$deep-blue
         }
+        &.selected{
+          img{
+            content: url('../src/icons/table_s.png');
+          }
+        }
       }
     }
   }
-  .map_view{
-    z-index: -1;
-    padding: 30px;
-    .map_container{
+  .content{
+    .map_view{
+      z-index: -1;
+      padding: 30px;
       display: grid;
-      place-content: center;
-      .leaflet-container{
-        border-radius: 30px;
-        height: 500px;
-        width: 500px;
-        box-shadow: 0 0 10px 2px $dgray;
-        .map_popup{
-          display: grid;
-          .name{
-            display: flex;
-            align-items: center;
-            gap:10px;
-            .drop_down{
-              height: 15px;
-              cursor: pointer;
-              transform: rotate(180deg);
-              &.rotate{
-                transform: rotate(360deg);
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto auto;
+      .map_search{
+        grid-column: span 2;
+        background-color: green;
+        height:40px;
+      }
+      .filters{
+        background-color:$pieOrange;
+        width: 100px;
+      }
+      .map_container{
+        background-color: yellow;
+        display: grid;
+        place-content: center;
+        .leaflet-container{
+          border-radius: 30px;
+          height: 500px;
+          width: 60vw;
+          box-shadow: 0 0 10px 2px $dgray;
+          .map_popup{
+            display: grid;
+            .name{
+              display: flex;
+              align-items: center;
+              gap:10px;
+              .drop_down{
+                height: 15px;
+                cursor: pointer;
+                transform: rotate(180deg);
+                &.rotate{
+                  transform: rotate(360deg);
+                }
               }
             }
           }
         }
       }
     }
-  }
-  .pie_view{
-    padding: 30px;
-    display:grid;
-    place-content: center;
-    .pie_container{
-      height: 500px;
-      width: 500px;
-      border-radius:30px ;
-      box-shadow: 0 0 10px 2px $dgray;
-      padding:30px;
-    }
-  }
-  .trend_view{
-    padding: 30px;
-    display:grid;
-    place-content: center;
-    .trend_container{
-      display: grid;
-      place-content: center;
-      width: 80vw;
-      max-height: 70vh;
-    }
-  }
-  .bar_view{
-    padding: 30px;
-    display:grid;
-    place-content: center;
-    .bar_container{
+    .pie_view{
+      padding: 30px;
       display:grid;
       place-content: center;
-      max-height: 70vh;
-      width: 80vw;
+      .pie_container{
+        height: 500px;
+        width: 500px;
+        border-radius:30px ;
+        box-shadow: 0 0 10px 2px $dgray;
+        padding:30px;
+      }
+    }
+    .trend_view{
+      padding: 30px;
+      display:grid;
+      place-content: center;
+      .trend_container{
+        display: grid;
+        place-content: center;
+        width: 80vw;
+        max-height: 70vh;
+      }
+    }
+    .bar_view{
+      padding: 30px;
+      display:grid;
+      place-content: center;
+      .bar_container{
+        display:grid;
+        place-content: center;
+        max-height: 70vh;
+        width: 80vw;
+      }
     }
   }
 }
