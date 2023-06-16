@@ -4,6 +4,7 @@ import Hero from './comps/Hero';
 import MapView from './comps/MapView';
 import PiewView from './comps/PieView';
 import Topbar from './comps/Topbar';
+import TrendView from './comps/TrendView';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <Topbar />
       <Hero />
       {/* <MapView /> */}
-      <PiewView />
+      {/* <PiewView /> */}
+      <TrendView />
     </div>
   );
 }
