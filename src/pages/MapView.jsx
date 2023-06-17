@@ -3,11 +3,9 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import L from 'leaflet'
 import markerIcon from 'leaflet/dist/images/marker-icon.png'
 import dummyData from '../data/dummyData'
-import MapPopup from './MapPopup'
+import MapPopup from '../comps/MapPopup'
 import {useState} from 'react'
-import searchIcon from '../icons/search_b.png'
-import filterIcon from '../icons/filter.png'
-import Filters from './Filters'
+import Filters from '../comps/Filters'
 
 const defIcon = new L.icon({
   iconUrl: markerIcon

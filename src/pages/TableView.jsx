@@ -27,7 +27,7 @@ function TableView() {
     },
     {
       name: 'District',
-      selector: row => row.district,
+      selector: row => row.district || '---',
       sortable:true
     },
     {

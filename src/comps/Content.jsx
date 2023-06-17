@@ -1,9 +1,9 @@
 import Hero from './Hero';
-import MapView from './MapView';
-import PieView from './PieView';
-import TrendView from './TrendView';
-import BarView from './BarView';
-import TableView from './TableView';
+import MapView from '../pages/MapView';
+import PieView from '../pages/PieView';
+import TrendView from '../pages/TrendView';
+import BarView from '../pages/BarView';
+import TableView from '../pages/TableView';
 import {HashRouter, Routes, Route} from 'react-router-dom'
 
 function Content() {
