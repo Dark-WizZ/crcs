@@ -7,6 +7,7 @@ import MapPopup from './MapPopup'
 import {useState} from 'react'
 import searchIcon from '../icons/search_b.png'
 import filterIcon from '../icons/filter.png'
+import Filters from './Filters'
 
 const defIcon = new L.icon({
   iconUrl: markerIcon
@@ -28,7 +29,8 @@ function MapView() {
       <div className="title">
         <h1>GEOGRAPHIC OVERVIEW</h1>
       </div>
-      <div className="filters">
+      <Filters />
+      {/* <div className="filters">
         <img src={filterIcon} alt="filter" onClick={fltrClk}/>
         {showFilter && <div className="wrapper">
           <form onSubmit={submitHandler}>
@@ -62,7 +64,7 @@ function MapView() {
             <button type="submit">Search</button>
           </form>
         </div>}
-      </div>
+      </div> */}
       <div className="map_container">
         <MapContainer center={[ 23.805450,78.398438]} zoom={5} scrollWheelZoom={false}>
           <TileLayer

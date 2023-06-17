@@ -59,7 +59,7 @@ function TableView() {
       <div>
         <input type="text"placeholder="search..." onChange={handleFilter}/>
       </div>
-      <DataTable columns={column} data={data}
+      <DataTable columns={column} data={data} title={'DATA TABLE'}
       pagination
       ></DataTable>
     </div>
