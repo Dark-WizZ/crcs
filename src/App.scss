@@ -323,7 +323,6 @@ h1,h2,h3,h4,h5,h6{
         height: 500px;
         width: 500px;
         border-radius:30px ;
-        box-shadow: 0 0 10px 2px $dgray;
         padding:30px;
       }
     }
@@ -349,5 +348,19 @@ h1,h2,h3,h4,h5,h6{
         width: 80vw;
       }
     }
+    .table_view{
+      display: grid;
+      place-content: center;
+      overflow-x: scroll;
+      .wrapper{
+        width: 80vw;
+        padding:30px;
+      }
+    }
+  }
+  .footer{
+    background-color: $lgray;
+    display: flex;
+    justify-content: space-between;
   }
 }

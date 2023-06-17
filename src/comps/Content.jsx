@@ -3,6 +3,7 @@ import MapView from './MapView';
 import PieView from './PieView';
 import TrendView from './TrendView';
 import BarView from './BarView';
+import TableView from './TableView';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 function Content() {
@@ -15,7 +16,7 @@ function Content() {
       <Route path='/pieview' element={<PieView />} />
       <Route path='/mapview' element={<MapView />} />
       <Route path='/trendview' element={<TrendView />} />
-      {/* <Route path='/tableview' element={<TableView />} /> */}
+      <Route path='/tableview' element={<TableView />} />
     </Routes>
     </BrowserRouter>
   </div> );

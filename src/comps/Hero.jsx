@@ -57,7 +57,7 @@ function Hero() {
         <img src={trend} alt="trend view" />
         <div className="text">REGISTRATION TRENDS</div>
       </div>
-      <div className="data_table view_card" onClick={e => cardClk(e,'/')} ref={tableRef}>
+      <div className="data_table view_card" onClick={e => cardClk(e,'/tableview')} ref={tableRef}>
         <img src={dataTable} alt="data table view" />
         <div className="text">INFORMATION TABLE</div></div>
     </section>
