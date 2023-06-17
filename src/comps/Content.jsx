@@ -4,11 +4,11 @@ import PieView from './PieView';
 import TrendView from './TrendView';
 import BarView from './BarView';
 import TableView from './TableView';
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {HashRouter, Routes, Route} from 'react-router-dom'
 
 function Content() {
   return ( <div className="content">
-    <BrowserRouter>
+    <HashRouter>
     <Hero />
     <Routes >
     <Route path='/' element={<MapView />} />
@@ -18,7 +18,7 @@ function Content() {
       <Route path='/trendview' element={<TrendView />} />
       <Route path='/tableview' element={<TableView />} />
     </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </div> );
 }
 
