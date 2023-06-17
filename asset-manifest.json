@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/crcs/static/css/main.ea8faf0f.css",
+    "main.js": "/crcs/static/js/main.d7c9f06f.js",
+    "static/media/mscs_icon.png": "/crcs/static/media/mscs_icon.7e624f7903a34b5c3479.png",
+    "static/media/map.png": "/crcs/static/media/map.84714bf59caf2339b851.png",
+    "static/media/pie.png": "/crcs/static/media/pie.a0841ddacb613ebc8361.png",
+    "static/media/emb.png": "/crcs/static/media/emb.3cae2a7157cbe055fa16.png",
+    "static/media/application.png": "/crcs/static/media/application.57c8886986c85f94850b.png",
+    "static/media/map_s.png": "/crcs/static/media/map_s.69a0bf8dbf15ce95af7d.png",
+    "static/media/pie_s.png": "/crcs/static/media/pie_s.0e706ac6b737e0d6f0dd.png",
+    "static/media/report.png": "/crcs/static/media/report.850f4f88d2093a15d0f5.png",
+    "static/media/table.png": "/crcs/static/media/table.b63ce3ff47ac07eb82e9.png",
+    "static/media/bar.png": "/crcs/static/media/bar.f73c542b87229f5bfdd6.png",
+    "static/media/home.png": "/crcs/static/media/home.f183405a83164b805339.png",
+    "static/media/more.png": "/crcs/static/media/more.4bd42b88d49523ec5814.png",
+    "static/media/filter.png": "/crcs/static/media/filter.84a487c3b9c2eba31bd2.png",
+    "static/media/trend.png": "/crcs/static/media/trend.b078366a4e07f32eab29.png",
+    "index.html": "/crcs/index.html",
+    "main.ea8faf0f.css.map": "/crcs/static/css/main.ea8faf0f.css.map",
+    "main.d7c9f06f.js.map": "/crcs/static/js/main.d7c9f06f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea8faf0f.css",
+    "static/js/main.d7c9f06f.js"
+  ]
+}
