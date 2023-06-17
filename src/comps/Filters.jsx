@@ -1,5 +1,4 @@
 import { useState, useContext } from 'react'
-import searchIcon from '../icons/search_b.png'
 import filterIcon from '../icons/filter.png'
 import dummyData from '../data/dummyData'
 import DataList from './DataList'
@@ -7,7 +6,7 @@ import { ShowContext } from '../context/ShowContext'
 
 
 
-function Filters() {
+function Filters({data, setData}) {
   const {showFilter,setShowFilter, showItems, setShowItems} = useContext(ShowContext)
 
   const fltrClk = (e) => {
@@ -23,6 +22,20 @@ function Filters() {
 
   const submitHandler = (e) => {
     e.preventDefault()
+    const name = e.target[0].value
+    const state = e.target[1].value
+    const district = e.target[2].value
+    const sector = e.target[3].value
+    if(!name&&!state&&!district&&!sector){
+      setData(dummyData)
+    }else{
+      let newData = JSON.parse(JSON.stringify(dummyData))
+      if (name) newData=newData.filter(r=>r.name.toLowerCase().includes(name.toLowerCase()))
+      if (state) newData=newData.filter(r=>r.state.toLowerCase().includes(state.toLowerCase()))
+      if (district) newData=newData.filter(r=>r.district && r.district.toLowerCase().includes(district.toLowerCase()))
+      if (sector) newData=newData.filter(r=>r.sector && r.sector.toLowerCase().includes(sector.toLowerCase()))
+      setData(newData)
+    }
   }
 
   return ( <div className="filters">
@@ -45,7 +58,7 @@ function Filters() {
         <label htmlFor="sector_ip">Sector: </label>
         <input type="text" placeholder='Enter Sector' id='sector_ip'/>
       </div>
-      <div className="dor_ip">
+      {/* <div className="dor_ip">
         <div className="text">Date of Registration</div>
         <div className="from_ip">
           <label htmlFor="from_ip">From: </label>
@@ -55,11 +68,11 @@ function Filters() {
         <label htmlFor="to_ip">To: </label>
           <input type="text" id='from_ip' placeholder='dd/mm/yyyy' />
         </div>
-      </div>
+      </div> */}
       <button type="submit">Search</button>
     </form>
   </div>}
-  <DataList />
+  <DataList data={data}/>
 </div> );
 }
 
