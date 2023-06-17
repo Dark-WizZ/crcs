@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/crcs/static/css/main.cbbcd24c.css",
-    "main.js": "/crcs/static/js/main.0e6aa49b.js",
+    "main.css": "/crcs/static/css/main.15c7f98d.css",
+    "main.js": "/crcs/static/js/main.8d766cd2.js",
     "static/media/mscs_icon.png": "/crcs/static/media/mscs_icon.7e624f7903a34b5c3479.png",
     "static/media/map.png": "/crcs/static/media/map.84714bf59caf2339b851.png",
     "static/media/pie.png": "/crcs/static/media/pie.a0841ddacb613ebc8361.png",
@@ -17,11 +17,11 @@
     "static/media/filter.png": "/crcs/static/media/filter.84a487c3b9c2eba31bd2.png",
     "static/media/trend.png": "/crcs/static/media/trend.b078366a4e07f32eab29.png",
     "index.html": "/crcs/index.html",
-    "main.cbbcd24c.css.map": "/crcs/static/css/main.cbbcd24c.css.map",
-    "main.0e6aa49b.js.map": "/crcs/static/js/main.0e6aa49b.js.map"
+    "main.15c7f98d.css.map": "/crcs/static/css/main.15c7f98d.css.map",
+    "main.8d766cd2.js.map": "/crcs/static/js/main.8d766cd2.js.map"
   },
   "entrypoints": [
-    "static/css/main.cbbcd24c.css",
-    "static/js/main.0e6aa49b.js"
+    "static/css/main.15c7f98d.css",
+    "static/js/main.8d766cd2.js"
   ]
 }
