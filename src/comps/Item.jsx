@@ -6,10 +6,10 @@ function Item({obj}) {
   const [showDetails, setShowDetails] = useState(false)
   const dropDown= (e)=>{
     if(showDetails){
-      e.nativeEvent.originalTarget.classList.toggle('rotate')
+      e.target.classList.toggle('rotate')
       setShowDetails(false)
     }else{
-      e.nativeEvent.originalTarget.classList.toggle('rotate')
+      e.target.classList.toggle('rotate')
       setShowDetails(true)
     }
   }
