@@ -5,13 +5,14 @@ import TrendView from '../pages/TrendView';
 import BarView from '../pages/BarView';
 import TableView from '../pages/TableView';
 import {HashRouter, Routes, Route} from 'react-router-dom'
+import Dashboard from '../pages/Dashboard';
 
 function Content() {
   return ( <div className="content">
     <HashRouter>
     <Hero />
     <Routes >
-    <Route path='/' element={<MapView />} />
+    <Route path='/' element={<Dashboard />} />
       <Route path='/barview' element={<BarView />} />
       <Route path='/pieview' element={<PieView />} />
       <Route path='/mapview' element={<MapView />} />

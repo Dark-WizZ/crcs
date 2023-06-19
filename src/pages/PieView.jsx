@@ -27,7 +27,7 @@ const options = {
   responsive: true,
   plugins:{
     legend:{
-      position: 'top',
+      position: 'right',
     },
     title:{
       display: true,
