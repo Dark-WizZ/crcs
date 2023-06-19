@@ -3,7 +3,7 @@ import Content from './comps/Content';
 import Footer from './comps/Footer';
 import Header from './comps/Header';
 import Topbar from './comps/Topbar';
-import ShowContextProvider, { ShowContext } from './context/ShowContext';
+import ShowContextProvider from './context/ShowContext';
 
 function App() {
   return (

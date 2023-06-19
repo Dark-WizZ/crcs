@@ -9,100 +9,24 @@ $lgray:#F5F5F5;
 $dgray:#333333;
 $pieOrange: #ff7f0e;
 
-@media only screen and (max-width: 786px){
-  .App{
-    display: block !important;;
-    .header{
-      width: 100%;
-      display: flex;
-      flex-direction: column-reverse;
-      #em_logo{
-        display: none;
-      }
-      .title{
-        h1{
-          font-size:0.9em;
-        }
-        h4{
-          display:none;
-        }
-      }
-    }
-    .topbar{
-      display: none !important;
-      flex-direction: column;
-      padding:10px;
-      div>.text{
-        display: none;
-      }
-    }
-    .hero{
-      
-      .download{
-        display: none !important;
-      }
-      section{
-        .view_card{
-          height: fit-content !important;
-          width: fit-content !important;
-          padding:0;
-          .text{
-            display:none;
-          }
-        }
-      }
-    }
-    .content{
-      overflow: hidden !important;
-      height: 100vh;
-      .map_view{
-        display: block !important;
-        margin: 0px !important;
-        padding:0 !important;
-        .title{
-          font-size: 0.8em;
-        }
-        .filters{
-          display: none !important;
-        }
-        .map_container{
-          display: block !important;
-          place-content: none !important;
-          .leaflet-container{
-            justify-self: start !important;
-            width:100vw !important;
-          }
-        }
-      }
-      .pie_view{
-        >*{
-          box-shadow: none !important;
-        }
-      }
-    }
-  }
-}
-
-
 h1,h2,h3,h4,h5,h6{
   margin:0;
 }
 
+body{
+  background-color: $lgray;
+}
 .App{
   display: grid;
   .header{
     text-align: center;
     display:flex;
-    height: min-content;
     background-color: $primary;
     color:$secondary;
     align-items: center;
-    padding:0 10px;
-    padding-bottom: 5px;
+    padding:5px 10px 5px;
     border-bottom: 1px solid $dgray;
     .title{
-      display: grid;
-      justify-content: flex-start;
       margin:0 auto;
     }
     img{
@@ -110,7 +34,7 @@ h1,h2,h3,h4,h5,h6{
     }
   }
   .topbar{
-    z-index: 10;
+    z-index:10000;
     position: sticky;
     top:0;
     background-color:$primary;
@@ -118,25 +42,27 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
     justify-content: space-around;
     border-bottom: 1px solid $dgray;
-    &.pinned{
-      background-color: $deep-blue;
-    }
-    div{
+    &>div{
       display: flex;
       align-items: center;
       gap:5px;
       padding:5px;
       cursor: pointer;
+      filter:opacity(75%);
       img{
         height: 1.2rem;
       }
+      &:hover{
+        filter:opacity(100%)
+      }
     }
     .selected{
-      border-bottom: 5px solid $secondary;
+      border-bottom: 3px solid $secondary;
+      filter:opacity(100%)
     }
   }
   .hero{
-    background: linear-gradient(180deg, $primary 10%, $deep-blue 80%, $secondary 10% );
+    background: linear-gradient(180deg, $primary 10%, $deep-blue 80%, $lgray 10% );
     color:$secondary;
     display:grid;
     gap:10px;
@@ -147,20 +73,25 @@ h1,h2,h3,h4,h5,h6{
       .download{
         display:flex;
         gap:5px;
+        button{
+          cursor: pointer;
+        }
       }
     }
     section{
-      display: grid;
-      grid-auto-flow: column;
-      justify-content: space-around;
+      display: flex;
+      justify-content: space-evenly;
+      gap:1rem;
       font-weight: 900;
       .view_card{
+        overflow: hidden;
         background-color: $secondary;
         padding:10px;
-        height:100px;
-        width: 150px;
         border-radius: 10px;
-        display: grid;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
         box-shadow: 0 0 5px 1px $primary;
         img{
           height:2rem;
@@ -178,145 +109,110 @@ h1,h2,h3,h4,h5,h6{
           .text{
             color:$secondary
           }
+
+          img{
+            filter:brightness(0) invert(1);
+          }
         }
       }
       .map{
         .text{
           color:$primary;
         }
-        &.selected{
-          img{
-            content: url('../src/icons/map_s.png');
-          }
-        }
       }
       .pie{
         .text{
           color:$pieOrange
-        }
-        &.selected{
-          img{
-            content: url('../src/icons/pie_s.png');
-          }
         }
       }
       .bar{
         .text{
           color:$deep-blue;
         }
-        &.selected{
-          img{
-            content: url('../src/icons/bar_s.png');
-          }
-        }
       }
       .trend{
         .text{
           color:$pieOrange
-        }
-        &.selected{
-          img{
-            content: url('../src/icons/trend_s.png');
-          }
         }
       }
       .data_table{
         .text{
           color:$deep-blue
         }
-        &.selected{
-          img{
-            content: url('../src/icons/table_s.png');
-          }
-        }
       }
     }
   }
   .content{
     .map_view{
-      z-index: -1;
       padding: 30px;
-      display: grid;
-      grid-template-columns: auto auto;
-      grid-template-rows: auto auto;
+      display: flex;
+      flex-direction: column;
       padding:30px;
       margin:30px 0;
+      align-items: center;
       .title{
         grid-column: span 2;
         text-align: center;
-        justify-self: center;
-        height:40px;
-        display:flex;
-        align-items: center;
-        img{
-          height:30px;
-        }
-        input{
-          width: 100%;
-          height:30px;
-          border-radius: 30px;
-          padding:0 10px;
-        }
       }
-      .filters{
-        background-color: rgb(158, 202, 255);
-        width: fit-content;
-        justify-self: self-end;
-        padding:10px;
-        overflow-y: scroll;
-        height:480px;
-        max-width: 500px;
-        width: fit-content;
-        img{
-          height:25px;
-          cursor: pointer;
-        }
-        .wrapper{
-          padding:30px;
-          form{
-            display: grid;
-            gap:1rem;
-            div{
-              display: flex;
-              label{
-                width: 10em;
-              }
-              input{
-                width: 100%;
-              }
-            }
-            .dor_ip{
+      .map_container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .filters{
+          background-color: rgb(158, 202, 255);
+          justify-self: end;
+          padding:10px;
+          overflow-y: scroll;
+          height:480px;
+          max-width: 500px;
+          width: fit-content;
+          img{
+            height:25px;
+            cursor: pointer;
+          }
+          .wrapper{
+            padding:30px;
+            form{
               display: grid;
               gap:1rem;
+              div{
+                display: flex;
+                label{
+                  width: 10em;
+                }
+                input{
+                  width: 100%;
+                }
+              }
+              .dor_ip{
+                display: grid;
+                gap:1rem;
+              }
             }
           }
-        }
-        .data_list{
-          .wrapper{
-            display: grid;
-            gap:10px;
-            .item{
-              background-color: white;
-              border-radius: 10px;
-              padding:10px;
-              .name{
-                display: flex;
-                justify-content: space-between;
-                img{
-                  height:1em;
+          .data_list{
+            .wrapper{
+              display: grid;
+              gap:10px;
+              .item{
+                background-color: white;
+                border-radius: 10px;
+                padding:10px;
+                .name{
+                  display: flex;
+                  justify-content: space-between;
+                  img{
+                    height:1em;
+                    &.rotate{
+                      transform: rotate(180deg);
+                    }
+                  }
                 }
               }
             }
           }
         }
-      }
-      .map_container{
-        display: grid;
-        place-content: center;
-        height: 500px;
-        width: 500px;
         .leaflet-container{
-          // border-radius: 30px;
           height: 500px;
           width: 500px;
           .map_popup{
@@ -385,5 +281,46 @@ h1,h2,h3,h4,h5,h6{
     background-color: $lgray;
     display: flex;
     justify-content: space-between;
+  }
+}
+@media only screen and (max-width: 786px){
+  .App{
+    .header{
+      .title{
+        h1{
+          font-size: 1em;
+        }
+        h4{
+          display: none;
+        }
+      }
+    }
+    .topbar{
+      &>div:not( .selected){
+        display: none;
+      }
+    }
+    .content{
+      .hero{
+        .top{
+          .download{
+            display:none;
+          }
+        }
+        section{
+          .view_card{
+            .text{
+              display:none;
+            }
+          }
+        }
+      }
+      .map_view{
+        
+      }
+    }
+    .footer{
+      display:none;
+    }
   }
 }

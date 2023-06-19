@@ -72,7 +72,7 @@ function Filters({data, setData}) {
       <button type="submit">Search</button>
     </form>
   </div>}
-  <DataList data={data}/>
+  {showFilter && <DataList data={data}/>}
 </div> );
 }
 

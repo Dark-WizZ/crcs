@@ -28,8 +28,8 @@ function MapView() {
       <div className="title">
         <h1>GEOGRAPHIC OVERVIEW</h1>
       </div>
-      <Filters data={data} setData={setData}/>
       <div className="map_container">
+        <Filters data={data} setData={setData}/>
         <MapContainer center={[ 23.805450,78.398438]} zoom={5} scrollWheelZoom={false}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

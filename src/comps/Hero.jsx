@@ -22,7 +22,6 @@ function Hero() {
 
 
   const cardClk = (e, path) =>{
-    console.log('click')
     refs.forEach(e => {
       if(e.current.classList.contains('selected')){
         e.current.classList.remove('selected')
