@@ -22,11 +22,17 @@ function Hero() {
 
 
   const cardClk = (e, path) =>{
+    let self=false
+    if(e.target.classList.contains('selected')){
+      path='/'
+      self=true
+    }
     refs.forEach(e => {
       if(e.current.classList.contains('selected')){
         e.current.classList.remove('selected')
       }
     })
+    if(!self)
     e.target.classList.add('selected')
     nav(path)
   }
@@ -48,7 +54,7 @@ function Hero() {
         <img src={pie} alt="pie view" />
         <div className="text">SECTOR PROPORTION</div>
       </div>
-      <div className="map view_card selected" onClick={e => cardClk(e,'/mapview')} ref={mapRef}>
+      <div className="map view_card" onClick={e => cardClk(e,'/mapview')} ref={mapRef}>
         <img src={map} alt="map view" />
         <div className="text">GEOGRAPHIC INSIGHT</div>
       </div>

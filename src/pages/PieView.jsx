@@ -28,10 +28,10 @@ const options = {
   plugins:{
     legend:{
       position: 'right',
-    },
-    title:{
-      display: true,
-      text: 'Type Wise Registraton'
+      labels:{
+        usePointStyle:true,
+        PointStyle:'circle'
+      }
     }
   }
 }
@@ -51,6 +51,7 @@ const data = {
 function PiewView() {
   return ( <div className="pie_view">
     <div className="pie_container">
+      <div className="title">Type Wise Registraton</div>
       <Pie data={data} options={options}></Pie>
     </div>
   </div> );

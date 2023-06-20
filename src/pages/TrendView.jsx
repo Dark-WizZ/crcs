@@ -15,12 +15,12 @@ const options = {
   responsive: true,
   plugins:{
     legend:{
-      position: 'top',
+      position: 'bottom',
+      labels:{
+        usePointStyle:true,
+        PointStyle:'circle'
+      }
     },
-    title:{
-      display: true,
-      text: 'Year wise Registraton'
-    }
   }
 }
 
@@ -41,6 +41,7 @@ const data = {
 function TrendView() {
   return ( <div className="trend_view">
     <div className="trend_container">
+      <div className="title">Year wise Registraton</div>
       <Line options={options} data={data} />
     </div>
   </div> );
