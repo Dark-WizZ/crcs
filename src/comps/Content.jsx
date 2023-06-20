@@ -1,5 +1,5 @@
 import Hero from './Hero';
-import MapView from '../pages/MapView';
+import MapView from '../pages/MapView2';
 import PieView from '../pages/PieView';
 import TrendView from '../pages/TrendView';
 import BarView from '../pages/BarView';
@@ -11,6 +11,7 @@ function Content() {
   return ( <div className="content">
     <HashRouter>
     <Hero />
+    <div className="page">
     <Routes >
     <Route path='/' element={<Dashboard />} />
       <Route path='/barview' element={<BarView />} />
@@ -19,6 +20,7 @@ function Content() {
       <Route path='/trendview' element={<TrendView />} />
       <Route path='/tableview' element={<TableView />} />
     </Routes>
+    </div>
     </HashRouter>
   </div> );
 }

@@ -111,7 +111,6 @@ body{
             .text{
               color:$secondary
             }
-  
             img{
               filter:brightness(0) invert(1);
             }
@@ -144,176 +143,183 @@ body{
         }
       }
     }
-    & .title{
-      text-align: center;
-      font-size: 1.2em;
-      font-weight: 700;
-    }
-    .map_view{
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      padding:30px;
-      align-items: center;
-      .title{
-        grid-column: span 2;
+    .page{
+      & .title{
         text-align: center;
+        font-size: 1.2em;
+        font-weight: 700;
       }
-      .map_container{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        .filters{
-          background-color: rgb(158, 202, 255);
-          justify-self: end;
-          padding:10px;
-          overflow-y: scroll;
-          height:480px;
-          max-width: 500px;
-          width: fit-content;
-          img{
-            height:25px;
-            cursor: pointer;
-          }
-          .wrapper{
-            padding:30px;
-            form{
-              display: grid;
-              gap:1rem;
-              div{
-                display: flex;
-                label{
-                  width: 10em;
-                }
-                input{
-                  width: 100%;
-                }
-              }
-              .dor_ip{
-                display: grid;
-                gap:1rem;
-              }
-            }
-          }
-          .data_list{
-            .wrapper{
-              display: grid;
-              gap:10px;
-              .item{
-                background-color: white;
-                border-radius: 10px;
-                padding:10px;
-                .name{
-                  display: flex;
-                  justify-content: space-between;
-                  img{
-                    height:1em;
-                    &.rotate{
-                      transform: rotate(180deg);
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        .leaflet-container{
-          height: 500px;
-          width: 500px;
-          .map_popup{
-            display: grid;
-            .name{
-              display: flex;
-              align-items: center;
-              gap:10px;
-              .drop_down{
-                height: 15px;
-                cursor: pointer;
-                transform: rotate(180deg);
-                &.rotate{
-                  transform: rotate(360deg);
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    .pie_view{
-      padding: 30px;
-      display:grid;
-      place-content: center;
-      .pie_container{
-        width: 500px;
-        border-radius:30px ;
-        padding:30px;
-      }
-      .content>.pie_container{
-        padding:3rem;
-        border-radius: 30px;
-        background-color: $secondary;
-        filter: drop-shadow(0 0 10px $primary)
-      }
-    }
-    .trend_view{
-      padding: 30px;
-      display:grid;
-      place-content: center;
-      .trend_container{
+      .map_view{
         display: grid;
         place-content: center;
-        width: 80vw;
-        max-height: 70vh;
+        .map_container{
+          width: 70vw;
+        }
+  
+        // padding: 30px;
+        // display: flex;
+        // flex-direction: column;
+        // padding:30px;
+        // align-items: center;
+        // .title{
+        //   grid-column: span 2;
+        //   text-align: center;
+        // }
+        // .map_container{
+        //   display: flex;
+        //   flex-wrap: wrap;
+        //   justify-content: center;
+        //   .filters{
+        //     background-color: rgb(158, 202, 255);
+        //     justify-self: end;
+        //     padding:10px;
+        //     overflow-y: scroll;
+        //     height:480px;
+        //     max-width: 500px;
+        //     width: fit-content;
+        //     img{
+        //       height:25px;
+        //       cursor: pointer;
+        //     }
+        //     .wrapper{
+        //       padding:30px;
+        //       form{
+        //         display: grid;
+        //         gap:1rem;
+        //         div{
+        //           display: flex;
+        //           label{
+        //             width: 10em;
+        //           }
+        //           input{
+        //             width: 100%;
+        //           }
+        //         }
+        //         .dor_ip{
+        //           display: grid;
+        //           gap:1rem;
+        //         }
+        //       }
+        //     }
+        //     .data_list{
+        //       .wrapper{
+        //         display: grid;
+        //         gap:10px;
+        //         .item{
+        //           background-color: white;
+        //           border-radius: 10px;
+        //           padding:10px;
+        //           .name{
+        //             display: flex;
+        //             justify-content: space-between;
+        //             img{
+        //               height:1em;
+        //               &.rotate{
+        //                 transform: rotate(180deg);
+        //               }
+        //             }
+        //           }
+        //         }
+        //       }
+        //     }
+        //   }
+        //   .leaflet-container{
+        //     height: 500px;
+        //     width: 500px;
+        //     .map_popup{
+        //       display: grid;
+        //       .name{
+        //         display: flex;
+        //         align-items: center;
+        //         gap:10px;
+        //         .drop_down{
+        //           height: 15px;
+        //           cursor: pointer;
+        //           transform: rotate(180deg);
+        //           &.rotate{
+        //             transform: rotate(360deg);
+        //           }
+        //         }
+        //       }
+        //     }
+        //   }
+        // }
       }
-    }
-    .bar_view{
-      padding: 30px;
-      display:grid;
-      place-content: center;
-      .bar_container{
+      .pie_view{
+        padding: 30px;
         display:grid;
         place-content: center;
-        max-height: 70vh;
-        width: 80vw;
-      }
-    }
-    .table_view{
-      display: grid;
-      place-content: center;
-      overflow-x: scroll;
-      .wrapper{
-        width: 80vw;
-        padding:30px;
-      }
-    }
-
-    .dashboard{
-      max-width: 100vw;
-      display:grid;
-      grid-template-columns: 50% 50%;
-      gap:3rem;
-      padding:3rem;
-      
-      &>*{
-        padding:3rem;
-        border-radius: 30px;
-        background-color: $secondary;
-        overflow: hidden;
-        filter: drop-shadow(0 0 10px $primary)
-      }
-      &>.bar_view{
-        .bar_container{
-          width:40vw;
-        }
-      }
-      &>.trend_view{
-        .trend_container{
-          width:40vw;
-        }
-      }
-      &>.pie_view{
         .pie_container{
-          width: 40vw;
+          width: 500px;
+          border-radius:30px ;
+          padding:30px;
+        }
+        .content>.pie_container{
+          padding:3rem;
+          border-radius: 30px;
+          background-color: $secondary;
+          filter: drop-shadow(0 0 10px $primary)
+        }
+      }
+      .trend_view{
+        padding: 30px;
+        display:grid;
+        place-content: center;
+        .trend_container{
+          display: grid;
+          place-content: center;
+          width: 80vw;
+          max-height: 70vh;
+        }
+      }
+      .bar_view{
+        padding: 30px;
+        display:grid;
+        place-content: center;
+        .bar_container{
+          display:grid;
+          place-content: center;
+          max-height: 70vh;
+          width: 80vw;
+        }
+      }
+      .table_view{
+        display: grid;
+        place-content: center;
+        overflow-x: scroll;
+        .wrapper{
+          width: 80vw;
+          padding:30px;
+        }
+      }
+      .dashboard{
+        max-width: 100vw;
+        display:grid;
+        grid-template-columns: 50% 50%;
+        gap:3rem ;
+        padding: 3rem;
+        padding-right: 6rem;
+        &>*{
+          padding:3rem;
+          border-radius: 30px;
+          background-color: $secondary;
+          overflow: hidden;
+          filter: drop-shadow(0 0 10px $primary)
+        }
+        &>.bar_view{
+          .bar_container{
+            max-width:40vw;
+          }
+        }
+        &>.trend_view{
+          .trend_container{
+            width:40vw;
+          }
+        }
+        &>.pie_view{
+          .pie_container{
+            width: 40vw;
+          }
         }
       }
     }
@@ -356,8 +362,15 @@ body{
           }
         }
       }
-      .map_view{
-        
+      .page{
+        margin: 3px solid red;
+        .dashboard{
+          grid-template-columns: auto;
+          padding: 3rem;
+        }
+        .bar_view{
+          
+        }
       }
       
     }

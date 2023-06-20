@@ -13,7 +13,7 @@ function App() {
       <ShowContextProvider>
       <Content />
       </ShowContextProvider>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

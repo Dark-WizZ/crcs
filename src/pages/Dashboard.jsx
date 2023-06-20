@@ -1,5 +1,5 @@
 import Barview from "./BarView";
-import MapView from "./MapView";
+import MapView from "./MapView2";
 import PiewView from "./PieView";
 import TrendView from "./TrendView";
 
@@ -8,7 +8,7 @@ function Dashboard() {
     <Barview />
     <TrendView />
     <PiewView />
-    <div className="map_view"></div>
+    <MapView />
   </div> );
 }
 
