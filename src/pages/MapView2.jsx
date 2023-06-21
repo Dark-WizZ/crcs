@@ -16,8 +16,8 @@ function MapView() {
   const [detail, setDetail] = useState('')
 
   return ( <div className="map_view">
-    <div className="map_container">
     <div className="title">Geographic Overview</div>
+    <div className="map_container">
     <ComposableMap data-tip='' projection="geoMercator" width={150} height={150} projectionConfig={{ scale: 200 }}>
           <ZoomableGroup zoom={1} center={[80,22]}>
             <Geographies geography={indiaMap}>

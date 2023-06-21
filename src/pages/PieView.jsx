@@ -27,10 +27,10 @@ const options = {
   responsive: true,
   plugins:{
     legend:{
-      position: 'right',
+      position: 'bottom',
       labels:{
-        usePointStyle:true,
-        PointStyle:'circle'
+        // usePointStyle:true,
+        // PointStyle:'cirrightcle'
       }
     }
   }
@@ -50,8 +50,8 @@ const data = {
 
 function PiewView() {
   return ( <div className="pie_view">
-    <div className="pie_container">
       <div className="title">Sector Wise Registraton</div>
+    <div className="pie_container">
       <Pie data={data} options={options}></Pie>
     </div>
   </div> );

@@ -40,8 +40,8 @@ const data = {
 
 function TrendView() {
   return ( <div className="trend_view">
+    <div className="title">Year Wise Registraton</div>
     <div className="trend_container">
-      <div className="title">Year Wise Registraton</div>
       <Line options={options} data={data} />
     </div>
   </div> );

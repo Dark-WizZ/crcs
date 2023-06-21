@@ -14,7 +14,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 body{
-  background-color: $lgray;
+  // background-color: $lgray;
 }
 .App{
   display: grid;
@@ -63,7 +63,7 @@ body{
   }
   .content{
     .hero{
-      background: linear-gradient(180deg, $primary 10%, $deep-blue 80%, $lgray 10% );
+      background: linear-gradient(180deg, $primary 10%, $deep-blue 80%, white 10% );
       color:$secondary;
       display:grid;
       gap:10px;
@@ -144,20 +144,46 @@ body{
     }
     .page{
       margin: 3rem 0;
+      display:flex;
+      justify-content: center;
+      &>*{
+        max-width: 100vw;
+        overflow: hidden;
+        border-radius: 5px;
+        width: fit-content;
+      }
       & .title{
         text-align: center;
-        font-size: 1.2em;
-        font-weight: 700;
+        background-color: #edf1ff;
+        font-size: 1.25rem;
+        font-weight: 500;
+        padding:15px;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-bottom:none;
       }
+      &>.bar_view .bar_container,
+      &>.trend_view .trend_container,
+      &>.pie_view .pie_container,
+      &>.map_view .map_container,
+      &>.table_view .table_container{
+          width: min(80vh, 80vw);
+          border: 1px solid rgba(0, 0, 0, 0.125);
+          padding:3rem; 
+      }
+
+      &>.bar_view .bar_container,
+      &>.trend_view .trend_container,
+      &>.table_view .table_container{
+        width:max(80vh,80vw)
+      }
+
+
       .map_view{
         display: grid;
         place-content: center;
         .map_container{
+          padding:0;
           position: relative;
-          width: 70vw;
-          background-color: #fff;
-          border-radius: 3rem;
-          filter: drop-shadow(0 0 10px $primary);
           .detail{
             display: flex;
             flex-direction: column;
@@ -187,79 +213,62 @@ body{
         }
       }
       .pie_view{
-        padding: 30px;
         display:grid;
         place-content: center;
-        .pie_container{
-          width: 500px;
-          border-radius:30px ;
-          padding:30px;
-          background-color: #fff;
-          border-radius: 3rem;
-          filter: drop-shadow(0 0 10px $primary)
-        }
       }
       .trend_view{
         padding: 30px;
         display:grid;
         place-content: center;
-        .trend_container{
-          display: grid;
-          place-content: center;
-          width: 80vw;
-          background-color: #fff;
-          border-radius: 3rem;
-          padding:3rem;
-          filter: drop-shadow(0 0 10px $primary)
-        }
       }
       .bar_view{
         padding: 30px;
         display:grid;
         place-content: center;
-        .bar_container{
-          display:grid;
-          place-content: center;
-          padding:3rem;
-          width: 80vw;
-          background-color: #fff;
-          border-radius: 3rem;
-          filter: drop-shadow(0 0 10px $primary)
-        }
       }
       .table_view{
         display: grid;
         place-content: center;
-        .wrapper{
-          width: 80vw;
-          padding:30px;
-          background-color: #fff;
-          border-radius: 3rem;
-          filter: drop-shadow(0 0 10px $primary);
-          
+        form{
+          display: flex;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+          gap:1rem;
+          input{
+            outline: none;
+          }
         }
       }
       .dashboard{
         max-width: 100vw;
         display:grid;
-        grid-template-columns: 50% 50%;
-        gap:3rem ;
+        grid-template-columns: 40vw 40vw;
+        gap:2rem ;
         padding: 3rem;
         padding-right: 6rem;
         &>*{
-          padding:3rem;
-          border-radius: 30px;
-          background-color: $secondary;
+          padding:0;
+          margin:0;
+          max-width:40vw;
           overflow: hidden;
-          filter: drop-shadow(0 0 10px $primary)
+          border: 1px solid rgba(0, 0, 0, 0.125);
+          border-radius: 5px;
+        }
+        &>.pie_view, &>.trend_view, &>.pie_view, &>.map_view{
+          align-self: start;
+          justify-self: start;
         }
         &>.bar_view .bar_container,
         &>.trend_view .trend_container,
         &>.pie_view .pie_container,
         &>.map_view .map_container{
-            max-width:40vw;
-            padding:0; 
-            filter:none;
+            width:40vw;
+            padding:0;
+        }
+        & .title{
+          text-align: left;
+          border:none;
+          margin-bottom: 1rem;
         }
       }
     }
@@ -303,13 +312,25 @@ body{
         }
       }
       .page{
-        margin: 3px solid red;
         .dashboard{
-          grid-template-columns: auto;
-          padding: 3rem;
-        }
-        .bar_view{
+          grid-template-columns: 80vw;
           
+          padding: 1rem;
+          &>*{
+            padding:0;
+            margin:0;
+            max-width:80vw;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            border-radius: 5px;
+          }
+          &>.bar_view .bar_container,
+          &>.trend_view .trend_container,
+          &>.pie_view .pie_container,
+          &>.map_view .map_container{
+              width:80vw;
+              padding:0;
+          }
         }
       }
       

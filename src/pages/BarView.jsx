@@ -53,8 +53,8 @@ const data = {
 
 function Barview() {
   return ( <div className="bar_view">
-    <div className="bar_container">
       <div className="title">State Wise Registration</div>
+    <div className="bar_container">
       <Bar options={options} data={data} />
     </div>
   </div> );
