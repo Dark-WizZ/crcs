@@ -96,7 +96,7 @@ function MapView() {
     {showDetail && <div className="detail">
       <button onClick={()=>setShowDetail(false)}>X</button>
       {detail.name && <div className="name"><b>{detail.name}</b></div>}
-      {detail.address && <div className="address"><b>Name: </b>{detail.address}</div>}
+      {detail.address && <div className="address"><b>Address: </b>{detail.address}</div>}
       {detail.state && <div className="state"><b>State: </b>{detail.state}</div>}
       {detail.district && <div className="district"><b>District: </b>{detail.district}</div>}
       {detail.registrationDate && <div className="dor"><b>Date of Registration: </b>{detail.registrationDate}</div>}
@@ -108,32 +108,3 @@ function MapView() {
 }
 
 export default MapView;
-
-{/* <ComposableMap 
-        width={500}
-        height={500}
-        projectionConfig={{
-          rotate:[-10, 0 , 0],
-          scale:147,
-        }}
-      >
-        <ZoomableGroup
-          zoom= {position.zoom}
-          center= {position.coords}
-          onMoveEnd={handleMoveEnd}
-        >
-          <Sphere stroke='#000' strokeWidth={0.3}/>
-          <Graticule stroke='#000' strokeWidth={0.3}/>
-          <Geographies Geography={topoIndia}>
-            {({geographies}) => 
-              geographies.map((geo, ind) => {
-                <Geography key={ind} geography={geo}
-                  fill='#333'
-                >
-
-                </Geography>
-              })
-            }
-          </Geographies>
-        </ZoomableGroup>
-      </ComposableMap> */}

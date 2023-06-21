@@ -48,7 +48,7 @@ function Hero() {
     <section>
       <div className="bar view_card" onClick={e => cardClk(e,'/barview')} ref={barRef}>
         <img src={bar} alt="bar view" />
-        <div className="text">REGISTRATION TRENDS</div>
+        <div className="text">REGISTRATION CHART</div>
       </div>
       <div className="pie view_card" onClick={e => cardClk(e,'/pieview')} ref={pieRef}>
         <img src={pie} alt="pie view" />
