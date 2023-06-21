@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.scss';
 import Content from './comps/Content';
 import Footer from './comps/Footer';
@@ -9,8 +10,17 @@ import TooltipContextProvider from './context/TooltipContext';
 
 
 function App() {
+  const [showWarn, setShowWarn] = useState(true)
+
+  const ignoreWarn = () =>{
+    setShowWarn(false)
+  }
   return (
     <div className="App" data-tip=''>
+      {showWarn && <div className='warn'>
+        This site isn't optimised for mobiles yet, please use wide-screen devices such as desktops
+        <button onClick={ignoreWarn}>Ignore this warning!</button>
+      </div>}
       <TooltipContextProvider>
       <Header />
       <Topbar />
