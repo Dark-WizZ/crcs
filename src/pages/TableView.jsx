@@ -26,11 +26,13 @@ const customStyles = {
   rows:{
     style:{
       borderBottom: '1px solid rgba(0, 0, 0, 0.125)',
+      fontSize: '0.8rem',
     }
   },
   expanderRow:{
     style:{
-      padding: '1rem 3rem', border: '1px solid rgba(0, 0, 0, 0.125)',
+      padding: '1rem 3rem',
+      border: '1px solid rgba(0, 0, 0, 0.125)',
       borderRadius:'5px',
     }
   }

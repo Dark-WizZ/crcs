@@ -12,7 +12,7 @@ function Topbar() {
       <img src={home} alt="home" />
       <div className="text">Home</div>
     </div>
-    <div className="dashboard selected" onClick={()=>window.location='/'}>
+    <div className="dashboard selected" onClick={()=>window.location='https://dark-wizz.github.io/crcs'}>
       <img src={dashboard} alt="dashboard" />
       <div className="text">Dashboard</div>
     </div>

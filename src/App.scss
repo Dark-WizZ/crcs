@@ -253,7 +253,14 @@ body{
           flex-wrap: wrap;
           gap:1rem;
           input{
+            border-style: none;
             outline: none;
+            padding:5px;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            &:hover, &:focus{
+            border: 1px solid rgba(0, 0, 0, 0.7);
+            }
           }
         }
       }
@@ -364,4 +371,10 @@ body{
 
 circle:hover{
   cursor:pointer;
+}
+.table_view .detail > * {
+  font-size: 0.8rem;
+}
+.table_view .detail b {
+  font-size: 0.85rem;
 }
