@@ -4,7 +4,7 @@ import trend from '../icons/trend.png'
 import dataTable from '../icons/table.png'
 import dummyData from '../data/dummyData'
 import bar from '../icons/bar.png'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useLocation} from 'react-router-dom'
 import { useRef, useEffect } from 'react'
 
 function Hero() {
@@ -15,25 +15,58 @@ function Hero() {
   const tableRef = useRef()
   const nav = useNavigate()
 
+  const location = useLocation()
+
+
   const refs = [
     barRef, pieRef, mapRef,trendRef,tableRef
   ]
-
-
-
-  const cardClk = (e, path) =>{
-    let self=false
-    if(e.target.classList.contains('selected')){
-      path='/'
-      self=true
-    }
+  const clearSelc = () => {
     refs.forEach(e => {
       if(e.current.classList.contains('selected')){
         e.current.classList.remove('selected')
       }
     })
-    if(!self)
-    e.target.classList.add('selected')
+  }
+  useEffect(()=>{
+    clearSelc()
+    switch (location.pathname) {
+      case '/barview':
+        barRef.current.classList.add('selected')
+        break
+      case '/pieview':
+        pieRef.current.classList.add('selected')
+        break
+      case '/tableview':
+        tableRef.current.classList.add('selected')
+        break
+      case '/trendview':
+        trendRef.current.classList.add('selected')
+        break
+      case '/mapview':
+        mapRef.current.classList.add('selected')
+        break
+      default:
+        break;
+    }
+  },[location])
+
+
+
+
+  const cardClk = (e, path) =>{
+    // let self=false
+    // if(e.target.classList.contains('selected')){
+    //   path='/'
+    //   self=true
+    // }
+    // refs.forEach(e => {
+    //   if(e.current.classList.contains('selected')){
+    //     e.current.classList.remove('selected')
+    //   }
+    // })
+    // if(!self)
+    // e.target.classList.add('selected')
     nav(path)
   }
 

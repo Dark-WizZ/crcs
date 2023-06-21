@@ -5,6 +5,8 @@ import {
 import { Line } from 'react-chartjs-2'
 import back from '../icons/left.png'
 import yearWiseRegData from '../data/yearWiseReg'
+import { useNavigate } from 'react-router-dom'
+import { switchPath } from '../context/nav'
 
 Chart.register(
   CategoryScale, LinearScale, PointElement,
@@ -40,9 +42,11 @@ const data = {
 }
 
 function TrendView() {
+  const nav = useNavigate()
+
   return ( <div className="trend_view">
     <div className="title">Year Wise Registraton
-      <img src={back} alt="dashboard"/>
+      <img src={back} alt="dashboard" onClick={()=>switchPath('trendview',nav)}/>
     </div>
     <div className="trend_container">
       <Line options={options} data={data} />

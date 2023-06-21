@@ -7,6 +7,8 @@ import data from '../data/dummyData'
 import indiaMap from '../data/india.json'
 import { TooltipContext } from '../context/TooltipContext'
 import back from '../icons/left.png'
+import { useNavigate } from 'react-router-dom'
+import { switchPath } from '../context/nav'
 
 
 const colorScale = scaleLinear().domain([0,1]).range(['#1f77b4','#9467bd'])
@@ -15,10 +17,11 @@ function MapView() {
   const {setTooltipCont} = useContext(TooltipContext)
   const [showDetail, setShowDetail] = useState(false)
   const [detail, setDetail] = useState('')
+  const nav = useNavigate()
 
   return ( <div className="map_view">
     <div className="title">Geographic Overview
-      <img src={back} alt="dashboard"/>
+      <img src={back} alt="dashboard" onClick={()=>switchPath('mapview',nav)}/>
     </div>
     <div className="map_container">
     <ComposableMap data-tip='' projection="geoMercator" width={150} height={150} projectionConfig={{ scale: 200 }}>

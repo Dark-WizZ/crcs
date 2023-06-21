@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 import dummyData from "../data/dummyData";
 import DataTable from 'react-data-table-component'
 import back from '../icons/left.png'
+import { useNavigate } from "react-router-dom";
+import { switchPath } from "../context/nav";
 
 
 const expanded_comp = ({data : detail}) =>{
@@ -43,6 +45,7 @@ function TableView() {
 
   const [data, setData] = useState(dummyData)
   const formRef = useRef()
+  const nav = useNavigate()
 
   const column = [
     // {
@@ -89,8 +92,6 @@ function TableView() {
 
 
   const handleFilter = () => {
-    console.log(formRef)
-
     const name = formRef.current[0].value
     const district = formRef.current[1].value
     const state = formRef.current[2].value
@@ -109,7 +110,7 @@ function TableView() {
 
   return ( <div className="table_view">
     <div className="title">Data Table
-      <img src={back} alt="dashboard"/>
+      <img src={back} alt="dashboard" onClick={()=>switchPath('tableview',nav)}/>
     </div>
     <div className="table_container">
     <form ref={formRef}>
