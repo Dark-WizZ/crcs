@@ -3,6 +3,7 @@ import {
   LineElement,Title, Tooltip, Legend
 } from'chart.js'
 import { Line } from 'react-chartjs-2'
+import back from '../icons/left.png'
 import yearWiseRegData from '../data/yearWiseReg'
 
 Chart.register(
@@ -40,7 +41,9 @@ const data = {
 
 function TrendView() {
   return ( <div className="trend_view">
-    <div className="title">Year Wise Registraton</div>
+    <div className="title">Year Wise Registraton
+      <img src={back} alt="dashboard"/>
+    </div>
     <div className="trend_container">
       <Line options={options} data={data} />
     </div>

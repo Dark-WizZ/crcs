@@ -6,6 +6,7 @@ import stateData from '../data/stateWiseReg'
 import data from '../data/dummyData'
 import indiaMap from '../data/india.json'
 import { TooltipContext } from '../context/TooltipContext'
+import back from '../icons/left.png'
 
 
 const colorScale = scaleLinear().domain([0,1]).range(['#1f77b4','#9467bd'])
@@ -16,7 +17,9 @@ function MapView() {
   const [detail, setDetail] = useState('')
 
   return ( <div className="map_view">
-    <div className="title">Geographic Overview</div>
+    <div className="title">Geographic Overview
+      <img src={back} alt="dashboard"/>
+    </div>
     <div className="map_container">
     <ComposableMap data-tip='' projection="geoMercator" width={150} height={150} projectionConfig={{ scale: 200 }}>
           <ZoomableGroup zoom={1} center={[80,22]}>

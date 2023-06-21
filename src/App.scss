@@ -60,6 +60,7 @@ body{
     display: flex;
     justify-content: space-around;
     border-bottom: 1px solid $dgray;
+    margin-bottom: 1rem;
     &>div{
       display: flex;
       align-items: center;
@@ -81,22 +82,21 @@ body{
   }
   .content{
     .hero{
-      background: linear-gradient(180deg, $primary 10%, $deep-blue 80%, white 10% );
-      color:$secondary;
-      display:grid;
-      gap:10px;
-      .top{
-        padding:10px;
-        display: flex;
-        justify-content: space-between;
-        .download{
-          display:flex;
-          gap:5px;
-          button{
-            cursor: pointer;
-          }
-        }
-      }
+      // color:$secondary;
+      // display:grid;
+      // gap:10px;
+      // .top{
+      //   padding:10px;
+      //   display: flex;
+      //   justify-content: space-between;
+      //   .download{
+      //     display:flex;
+      //     gap:5px;
+      //     button{
+      //       cursor: pointer;
+      //     }
+      //   }
+      // }
       section{
         display: flex;
         justify-content: space-evenly;
@@ -111,7 +111,7 @@ body{
           gap: 1rem;
           flex-wrap: wrap;
           align-items: center;
-          box-shadow: 0 0 5px 1px $primary;
+          border: 1px solid #0052CC;
           img{
             height:2rem;
           }
@@ -119,12 +119,11 @@ body{
             pointer-events: none;
           }
           &:hover{
-            box-shadow: 0 0 10px 3px $primary;
+            background: #0052cc1e;
             cursor: pointer;
           }
           &.selected{
-            box-shadow: 0 0 5px 2px $primary;
-            background: linear-gradient(180deg, $primary , $deep-blue 80%);
+            background: $deep-blue;
             .text{
               color:$secondary
             }
@@ -133,31 +132,34 @@ body{
             }
           }
         }
-        .map{
-          .text{
-            color:$primary;
-          }
+        .text{
+          color:$deep-blue;
         }
-        .pie{
-          .text{
-            color:$pieOrange
-          }
-        }
-        .bar{
-          .text{
-            color:$deep-blue;
-          }
-        }
-        .trend{
-          .text{
-            color:$pieOrange
-          }
-        }
-        .data_table{
-          .text{
-            color:$deep-blue
-          }
-        }
+        // .map{
+        //   .text{
+        //     color:$primary;
+        //   }
+        // }
+        // .pie{
+        //   .text{
+        //     color:$pieOrange
+        //   }
+        // }
+        // .bar{
+        //   .text{
+        //     color:$deep-blue;
+        //   }
+        // }
+        // .trend{
+        //   .text{
+        //     color:$pieOrange
+        //   }
+        // }
+        // .data_table{
+        //   .text{
+        //     color:$deep-blue
+        //   }
+        // }
       }
     }
     .page{
@@ -178,6 +180,16 @@ body{
         padding:15px;
         border: 1px solid rgba(0, 0, 0, 0.125);
         border-bottom:none;
+        position: relative;
+        img{
+          background-color: #fff;
+          height: 2rem;
+          border-radius: 5px;
+          position: absolute;
+          margin: 0 auto;
+          left:1rem;
+          cursor: pointer;
+        }
       }
       &>.bar_view .bar_container,
       &>.trend_view .trend_container,
@@ -294,6 +306,16 @@ body{
           text-align: left;
           border:none;
           margin-bottom: 1rem;
+          img{
+            border-radius: 0;
+            content: url('../src/icons/expand.png');
+            background: none;
+            left:auto;
+            top:auto;
+            bottom:auto;
+            right: 1rem;
+            height: 1.2rem;
+          }
         }
       }
     }

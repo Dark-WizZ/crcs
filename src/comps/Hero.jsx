@@ -38,13 +38,13 @@ function Hero() {
   }
 
   return ( <div className="hero">
-    <div className="top">
+    {/* <div className="top">
       <div className="total">Total Reistered Societies: {dummyData.length}</div>
       <div className="download">
         <div className="text">Download raw data: </div>
         <button>Get PDF</button>
       </div>
-    </div>
+    </div> */}
     <section>
       <div className="bar view_card" onClick={e => cardClk(e,'/barview')} ref={barRef}>
         <img src={bar} alt="bar view" />

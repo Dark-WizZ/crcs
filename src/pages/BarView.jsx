@@ -2,6 +2,8 @@ import stateWiseRegData from "../data/stateWiseReg"
 import{Chart, CategoryScale, LinearScale,
   BarElement, Title, Tooltip, Legend}from 'chart.js'
 import { Bar } from "react-chartjs-2"
+import back from '../icons/left.png'
+import { useNavigate } from "react-router-dom"
 
 Chart.register(
   CategoryScale, LinearScale,
@@ -52,8 +54,19 @@ const data = {
 }
 
 function Barview() {
+  const nav = useNavigate();
+
+  const expandClk=()=>{
+    let parts= window.location.href.split('/')
+    let loc = parts[parts.length-1]
+    if(loc=='barview') nav('../')
+    else nav('../bar_view')
+  }
+
   return ( <div className="bar_view">
-      <div className="title">State Wise Registration</div>
+      <div className="title">State Wise Registration
+        <img src={back} alt="dashboard" onClick={expandClk}/>
+      </div>
     <div className="bar_container">
       <Bar options={options} data={data} />
     </div>

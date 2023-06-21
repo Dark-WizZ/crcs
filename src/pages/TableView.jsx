@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import dummyData from "../data/dummyData";
 import DataTable from 'react-data-table-component'
+import back from '../icons/left.png'
 
 
 const expanded_comp = ({data : detail}) =>{
@@ -107,7 +108,9 @@ function TableView() {
   }
 
   return ( <div className="table_view">
-    <div className="title">Data Table</div>
+    <div className="title">Data Table
+      <img src={back} alt="dashboard"/>
+    </div>
     <div className="table_container">
     <form ref={formRef}>
       <div className="name_ip">
