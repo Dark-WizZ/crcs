@@ -17,7 +17,7 @@ body{
   // background-color: $lgray;
 }
 .warn{
-  display: none;
+  display: flex;
   z-index: 20;
   flex-direction: column;
   background-color: #ff2222d6;
@@ -247,12 +247,10 @@ body{
         place-content: center;
       }
       .trend_view{
-        padding: 30px;
         display:grid;
         place-content: center;
       }
       .bar_view{
-        padding: 30px;
         display:grid;
         place-content: center;
       }
@@ -326,9 +324,6 @@ body{
   }
 }
 @media only screen and (max-width: 786px){
-  .warn{
-    display: flex;
-  }
   .App{
     .header{
       .title{
@@ -361,6 +356,36 @@ body{
         }
       }
       .page{
+        &>*{
+          max-width: 100vw;
+          overflow: scroll;
+          border-radius: 5px;
+          width: fit-content;
+          padding:0;
+        }
+
+        &>.bar_view .bar_container,
+        &>.trend_view .trend_container,
+        &>.pie_view .pie_container,
+        &>.map_view .map_container,
+        &>.table_view .table_container{
+            width: min(80vh, 80vw);
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            overflow: hidden;
+        }
+
+        &>.bar_view .bar_container,
+        &>.trend_view .trend_container,
+        &>.table_view .table_container,
+        &.pie_view .pie_container{
+          padding:0;
+          width:80vw;
+        }
+        &>.bar_view .bar_container,
+        &>.trend_view .trend_container{
+          height: 50vh;
+        }
+
         .dashboard{
           grid-template-columns: 80vw;
           
@@ -370,8 +395,6 @@ body{
             margin:0;
             max-width:80vw;
             overflow: hidden;
-            border: 1px solid rgba(0, 0, 0, 0.125);
-            border-radius: 5px;
           }
           &>.bar_view .bar_container,
           &>.trend_view .trend_container,

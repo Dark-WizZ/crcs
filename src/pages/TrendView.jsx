@@ -15,6 +15,7 @@ Chart.register(
 )
 
 const options = {
+  maintainAspectRatio:false,
   responsive: true,
   plugins:{
     legend:{
