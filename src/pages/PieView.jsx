@@ -51,7 +51,7 @@ const data = {
 function PiewView() {
   return ( <div className="pie_view">
     <div className="pie_container">
-      <div className="title">Type Wise Registraton</div>
+      <div className="title">Sector Wise Registraton</div>
       <Pie data={data} options={options}></Pie>
     </div>
   </div> );

@@ -12,7 +12,7 @@ function Topbar() {
       <img src={home} alt="home" />
       <div className="text">Home</div>
     </div>
-    <div className="dashboard selected">
+    <div className="dashboard selected" onClick={()=>window.location='/'}>
       <img src={dashboard} alt="dashboard" />
       <div className="text">Dashboard</div>
     </div>
