@@ -5,6 +5,7 @@ import { Bar } from "react-chartjs-2"
 import back from '../icons/left.png'
 import { useNavigate } from "react-router-dom"
 import {switchPath} from '../context/nav'
+import {distClr as colorCodes} from "../data/color"
 
 Chart.register(
   CategoryScale, LinearScale,
@@ -23,22 +24,6 @@ const options = {
 
 const labels = Object.keys(stateWiseRegData)
 
-const colorCodes = [
-  '#1f77b4',  // Blue
-  '#ff7f0e',  // Orange
-  '#2ca02c',  // Green
-  '#d62728',  // Red
-  '#9467bd',  // Purple
-  '#8c564b',  // Brown
-  '#e377c2',  // Pink
-  '#7f7f7f',  // Gray
-  '#bcbd22',  // Olive
-  '#17becf',  // Teal
-  '#9edae5',  // Light Blue
-  '#1f77b4',  // Blue
-  '#ff7f0e',  // Orange
-  '#d62728'   // Red
-];
 const lightColorCode = colorCodes.map(c => c+'F1')
 
 const data = {

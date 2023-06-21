@@ -4,6 +4,7 @@ import DataTable from 'react-data-table-component'
 import back from '../icons/left.png'
 import { useNavigate } from "react-router-dom";
 import { switchPath } from "../context/nav";
+import {sectorClr} from "../data/color";
 
 
 const expanded_comp = ({data : detail}) =>{
@@ -86,7 +87,12 @@ function TableView() {
     {
       name: 'Sector type',
       selector: row => row.sector,
-      sortable:true
+      sortable:true,
+      cell: (r) => <div style={{
+        color:sectorClr[r.sector],
+        fontSize:'1rem',
+        fontWeight:'500',
+      }}>{r.sector}</div> 
     }
   ]
 
@@ -141,6 +147,7 @@ function TableView() {
     </form>
       <DataTable columns={column} data={data} customStyles={customStyles}
       pagination expandableRows expandableRowsComponent={expanded_comp}
+      highlightOnHover responsive
       ></DataTable>
     </div>
   </div> );
