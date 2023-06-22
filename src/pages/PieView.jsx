@@ -5,6 +5,8 @@ import back from '../icons/left.png'
 import { useNavigate } from "react-router-dom";
 import { switchPath } from "../context/nav";
 import {distClr as colorCodes} from "../data/color";
+import { useContext } from "react";
+import { DeviceContext } from "../context/DeviceContext";
 
 Chart.register(ArcElement,Tooltip, Legend)
 
@@ -12,15 +14,23 @@ Chart.register(ArcElement,Tooltip, Legend)
 const lightColorCode = colorCodes.map(c => c+'F1')
 
 
-const options = {
+const optionsDes = {
   responsive: true,
   plugins:{
     legend:{
-      position: 'bottom',
+      position: 'right',
       labels:{
         // usePointStyle:true,
         // PointStyle:'cirrightcle'
       }
+    }
+  }
+}
+const optionsMob = {
+  responsive: true,
+  plugins:{
+    legend:{
+      position: 'bottom',
     }
   }
 }
@@ -39,13 +49,9 @@ const data = {
 
 function PiewView() {
   const nav = useNavigate();
+  const {isMobile} = useContext(DeviceContext)
+  const options = (isMobile)? optionsMob: optionsDes
 
-  const expandClk=()=>{
-    let parts= window.location.href.split('/')
-    let loc = parts[parts.length-1]
-    if(loc=='pieview') nav('../')
-    else nav('../pieview')
-  }
   return ( <div className="pie_view">
       <div className="title">Sector Wise Registraton
         <img src={back} alt="dashboard" onClick={()=>switchPath('pieview',nav)}/>

@@ -196,15 +196,16 @@ body{
       &>.pie_view .pie_container,
       &>.map_view .map_container,
       &>.table_view .table_container{
-          width: min(80vh, 80vw);
+          width: 80vh;
           border: 1px solid rgba(0, 0, 0, 0.125);
-          padding:3rem; 
+          padding:3rem;
+          // height: 60vh;
       }
 
       &>.bar_view .bar_container,
       &>.trend_view .trend_container,
       &>.table_view .table_container{
-        width:max(80vh,80vw)
+        width:80vw
       }
 
 

@@ -39,7 +39,6 @@ const optionsMob = {
 
 const optionDesk = {
   responsive: true,
-  responsive: true,
   plugins: {
     legend: {
       display:false,
