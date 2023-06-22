@@ -6,6 +6,8 @@ import dummyData from '../data/dummyData'
 import bar from '../icons/bar.png'
 import {useNavigate, useLocation} from 'react-router-dom'
 import { useRef, useEffect } from 'react'
+import stateData from '../data/stateWiseReg'
+import sectorData from '../data/sectorPro'
 
 function Hero() {
   const barRef = useRef()
@@ -81,23 +83,30 @@ function Hero() {
     <section>
       <div className="bar view_card" onClick={e => cardClk(e,'/barview')} ref={barRef}>
         <img src={bar} alt="bar view" />
-        <div className="text">REGISTRATION CHART</div>
-      </div>
-      <div className="pie view_card" onClick={e => cardClk(e,'/pieview')} ref={pieRef}>
-        <img src={pie} alt="pie view" />
-        <div className="text">SECTOR PROPORTION</div>
-      </div>
-      <div className="map view_card" onClick={e => cardClk(e,'/mapview')} ref={mapRef}>
-        <img src={map} alt="map view" />
-        <div className="text">GEOGRAPHIC INSIGHT</div>
+        <div className="text">REGISTRATION CHART<br /><span>State wise</span></div>
       </div>
       <div className="trend view_card" onClick={e => cardClk(e,'/trendview')} ref={trendRef}>
         <img src={trend} alt="trend view" />
-        <div className="text">REGISTRATION TRENDS</div>
+        <div className="text">REGISTRATION TRENDS<br /><span>Year wise</span></div>
+      </div>
+      <div className="pie view_card" onClick={e => cardClk(e,'/pieview')} ref={pieRef}>
+        <img src={pie} alt="pie view" />
+        <div className="text">SECTOR PROPORTION
+        {/* <br /><span>#Sectors: {Object.keys(sectorData).length}</span> */}
+        </div>
+      </div>
+      <div className="map view_card" onClick={e => cardClk(e,'/mapview')} ref={mapRef}>
+        <img src={map} alt="map view" />
+        <div className="text">GEOGRAPHIC INSIGHT
+        {/* <br /><span>#States: {Object.keys(stateData).length}</span> */}
+        </div>
       </div>
       <div className="data_table view_card" onClick={e => cardClk(e,'/tableview')} ref={tableRef}>
         <img src={dataTable} alt="data table view" />
-        <div className="text">INFORMATION TABLE</div></div>
+        <div className="text">INFORMATION TABLE
+        {/* <br /><span>#Societies: {dummyData.length}</span> */}
+        </div>
+      </div>
     </section>
   </div> );
 }

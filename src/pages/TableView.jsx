@@ -1,11 +1,11 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import dummyData from "../data/dummyData";
 import DataTable from 'react-data-table-component'
 import back from '../icons/left.png'
 import { useNavigate } from "react-router-dom";
 import { switchPath } from "../context/nav";
 import {sectorClr} from "../data/color";
-
+import {DeviceContext} from '../context/DeviceContext'
 
 const expanded_comp = ({data : detail}) =>{
   return <div className='detail'>
@@ -47,8 +47,9 @@ function TableView() {
   const [data, setData] = useState(dummyData)
   const formRef = useRef()
   const nav = useNavigate()
+  const {isMobile} = useContext(DeviceContext)
 
-  const column = [
+  const columnDes = [
     // {
     //   name: 'S.NO',
     //   selector: row => row.sno,
@@ -85,7 +86,60 @@ function TableView() {
     //   sortable:true
     // },
     {
-      name: 'Sector type',
+      name: 'Sector',
+      selector: row => row.sector,
+      sortable:true,
+      cell: (r) => <div style={{
+        color:sectorClr[r.sector],
+        fontSize:'1rem',
+        fontWeight:'500',
+      }}>{r.sector}</div>,
+    }
+  ]
+  const columnMob = [
+    // {
+    //   name: 'S.NO',
+    //   selector: row => row.sno,
+    //   sortable:true
+    // },
+    {
+      name: 'Name',
+      selector: row => row.name,
+      sortable:true,
+      cell: (r)=><div style={{
+        maxWidth: '15ch',
+        whiteSpace:'nowrap',
+        textOverflow:'ellipsis',
+        overflow:'hidden'
+      }}>{r.name}</div>
+    },
+    // {
+    //   name: 'Address',
+    //   selector: row => row.address,
+    //   sortable:true
+    // },
+    // {
+    //   name: 'District',
+    //   selector: row => row.district || '---',
+    //   sortable:true
+    // },
+    // {
+    //   name: 'State',
+    //   selector: row => row.state,
+    //   sortable:true
+    // },
+    // {
+    //   name: 'Date of Registration',
+    //   selector: row => row.registrationDate,
+    //   sortable:true
+    // },
+    // {
+    //   name: 'Area of Operation',
+    //   selector: row => row.areaOfOp,
+    //   sortable:true
+    // },
+    {
+      name: 'Sector',
       selector: row => row.sector,
       sortable:true,
       cell: (r) => <div style={{
@@ -95,6 +149,10 @@ function TableView() {
       }}>{r.sector}</div> 
     }
   ]
+  const column = (isMobile)? columnMob: columnDes;
+
+
+  
 
 
   const handleFilter = () => {

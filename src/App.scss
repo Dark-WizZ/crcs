@@ -134,6 +134,11 @@ body{
         }
         .text{
           color:$deep-blue;
+          span{
+            // color:black;
+            font-weight: 100;
+            font-size: 1rem;
+          }
         }
         // .map{
         //   .text{
@@ -259,6 +264,7 @@ body{
         display: grid;
         place-content: center;
         form{
+          padding-top: 1rem;
           display: flex;
           justify-content: space-evenly;
           flex-wrap: wrap;
@@ -380,7 +386,7 @@ body{
         &>.table_view .table_container,
         &.pie_view .pie_container{
           padding:0;
-          width:80vw;
+          width:90vw;
         }
         &>.bar_view .bar_container,
         &>.trend_view .trend_container{
