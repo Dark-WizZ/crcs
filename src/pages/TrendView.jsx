@@ -1,14 +1,15 @@
 import {
   Chart, CategoryScale, LinearScale, PointElement,
-  LineElement,Title, Tooltip, Legend
-} from'chart.js'
+  LineElement, Title, Tooltip, Legend
+} from 'chart.js'
 import { Line } from 'react-chartjs-2'
 import back from '../icons/left.png'
 import yearWiseRegData from '../data/yearWiseReg'
 import { useNavigate } from 'react-router-dom'
 import { switchPath } from '../context/nav'
-import { useContext } from 'react'
-import { DeviceContext } from '../context/DeviceContext'
+import { useContext, useEffect, useState } from "react"
+import {DeviceContext} from "../context/DeviceContext"
+import { PathContext } from "../context/PathContext"
 
 Chart.register(
   CategoryScale, LinearScale, PointElement,
@@ -29,7 +30,20 @@ const optionsMob = {
     },
   }
 }
-const optionDes = {
+const optionDeskHome = {
+  responsive: true,
+  plugins:{
+    legend:{
+      position: 'bottom',
+      labels:{
+        usePointStyle:true,
+        PointStyle:'circle'
+      }
+    },
+  }
+}
+const optionDesk = {
+  maintainAspectRatio:false,
   responsive: true,
   plugins:{
     legend:{
@@ -59,7 +73,14 @@ const data = {
 function TrendView() {
   const nav = useNavigate()
   const {isMobile} = useContext(DeviceContext)
-  const options = (isMobile)? optionsMob: optionDes
+  const {isHome} = useContext(PathContext)
+  const [options, setOptions] = useState(optionDeskHome)
+
+  useEffect(()=>{
+    if(isMobile) setOptions(optionsMob)
+    else if (isHome) setOptions(optionDeskHome)
+    else setOptions(optionDesk)
+  })
 
   return ( <div className="trend_view">
     <div className="title">Year Wise Registraton

@@ -6,10 +6,12 @@ import BarView from '../pages/BarView';
 import TableView from '../pages/TableView';
 import {HashRouter, Routes, Route} from 'react-router-dom'
 import Dashboard from '../pages/Dashboard';
+import PathContextProvider from '../context/PathContext';
 
 function Content() {
   return ( <div className="content">
     <HashRouter>
+    <PathContextProvider>
     <Hero />
     <div className="page">
     <Routes >
@@ -21,6 +23,7 @@ function Content() {
       <Route path='/tableview' element={<TableView />} />
     </Routes>
     </div>
+    </PathContextProvider>
     </HashRouter>
   </div> );
 }

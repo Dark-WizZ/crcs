@@ -6,8 +6,9 @@ import back from '../icons/left.png'
 import { useNavigate } from "react-router-dom"
 import {switchPath} from '../context/nav'
 import {distClr as colorCodes} from "../data/color"
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import {DeviceContext} from "../context/DeviceContext"
+import { PathContext } from "../context/PathContext"
 
 Chart.register(
   CategoryScale, LinearScale,
@@ -38,6 +39,17 @@ const optionsMob = {
 }
 
 const optionDesk = {
+  maintainAspectRatio:false,
+  responsive: true,
+  plugins: {
+    legend: {
+      display:false,
+      position: 'bottom'
+    },
+  }
+}
+
+const optionDeskHome = {
   responsive: true,
   plugins: {
     legend: {
@@ -68,8 +80,14 @@ const data = {
 function Barview() {
   const nav = useNavigate();
   const {isMobile} = useContext(DeviceContext)
+  const {isHome} = useContext(PathContext)
+  const [options, setOptions] = useState(optionDeskHome)
 
-  const options = (isMobile)? optionsMob : optionDesk
+  useEffect(()=>{
+    if(isMobile) setOptions(optionsMob)
+    else if (isHome) setOptions(optionDeskHome)
+    else setOptions(optionDesk)
+  })
 
   return ( <div className="bar_view">
       <div className="title">State Wise Registration
