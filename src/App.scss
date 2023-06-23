@@ -215,10 +215,6 @@ body{
       &>.table_view .table_container{
         width:80vw
       }
-      
-      &>.map_view .map_container{
-        // height:80vh;
-      }
 
 
       .map_view{
@@ -270,12 +266,19 @@ body{
       .table_view{
         display: grid;
         place-content: center;
+        .table_container{
+          padding: 1rem 3rem;
+        }
         form{
           padding-top: 1rem;
+          margin-left:48px;
           display: flex;
           justify-content: space-evenly;
           flex-wrap: wrap;
           gap:1rem;
+          &>*{
+            margin-right: auto;
+          }
           input{
             border-style: none;
             outline: none;
@@ -398,6 +401,13 @@ body{
         &>.bar_view .bar_container,
         &>.trend_view .trend_container{
           height: 50vh;
+        }
+        .table_view{
+          form{
+            input{
+              width: 8em;
+            }
+          }
         }
 
         .dashboard{
